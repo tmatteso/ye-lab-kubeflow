@@ -23,7 +23,7 @@ variable "eks_version" {
 variable "node_instance_type" {
   description = "The instance type of an EKS node"
   type        = string
-  default     = "m5.16xlarge" # need a 256 gb notebook to check -- yep can get very big. How init with multiple instance types?
+  default     = "m5.4xlarge" # need a 256 gb notebook to check -- yep can get very big. How init with multiple instance types?
 }
 
 variable "node_instance_type_gpu" {

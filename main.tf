@@ -205,7 +205,7 @@ resource "kubectl_manifest" "karpenter_provisioner" {
           values: ["amd64"]
         - key: "karpenter.sh/capacity-type" # If not included, the webhook for the AWS cloud provider will default to on-demand
           operator: In
-          values: ["spot", "on-demand"]
+          values: ["spot"]
       kubeletConfiguration:
         containerRuntime: containerd
         maxPods: 110
@@ -239,7 +239,7 @@ resource "kubectl_manifest" "karpenter_provisioner_gpu" {
       requirements:
         - key: karpenter.sh/capacity-type
           operator: In
-          values: ["spot", "on-demand"]
+          values: ["spot"]
         - key: karpenter.k8s.aws/instance-category
           operator: In
           values: ["g", "p"]
